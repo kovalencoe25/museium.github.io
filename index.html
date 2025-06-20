@@ -13,13 +13,13 @@
     </header>
 
     <nav>
-  <ul>
-    <li><a href="#" onclick="scrollToSection('hero')">О герое</a></li>
-    <li><a href="#" onclick="scrollToSection('history')">История школы</a></li>
-    <li><a href="#" onclick="scrollToSection('exhibits')">Экспонаты</a></li>
-    <li><a href="#" onclick="scrollToSection('projects')">Проекты учеников</a></li>
-  </ul>
-</nav>
+        <ul>
+            <li><button onclick="scrollToSection('hero')">О герое</button></li>
+            <li><button onclick="scrollToSection('history')">История школы</button></li>
+            <li><button onclick="scrollToSection('exhibits')">Экспонаты</button></li>
+            <li><button onclick="scrollToSection('projects')">Проекты учеников</button></li>
+        </ul>
+    </nav>
 
 
     <main>
@@ -98,7 +98,7 @@
     function scrollToSection(id) {
         const section = document.getElementById(id);
         if (section) {
-            section.scrollIntoView({ behavior: 'smooth' });
+            section.scrollIntoView({ behavior: 'smooth', block: 'start' });
         }
     }
     </script>
