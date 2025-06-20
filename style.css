@@ -186,12 +186,15 @@ nav button:hover {
 }
 
 .modal-content {
-    margin: auto;
     display: block;
     max-width: 90%;
     max-height: 90%;
     border-radius: 8px;
     box-shadow: 0 0 20px black;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 .close {
@@ -273,12 +276,15 @@ nav button {
 }
 
 .modal-content {
-    margin: auto;
     display: block;
     max-width: 90%;
     max-height: 90%;
     border-radius: 8px;
     box-shadow: 0 0 20px black;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 .close {

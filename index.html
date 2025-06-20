@@ -128,32 +128,45 @@ document.addEventListener("DOMContentLoaded", function () {
 </script>
 <!-- Модальное окно для просмотра фото -->
 <div id="imageModal" class="modal">
-  <span class="close">&times;</span>
   <img class="modal-content" id="modalImage">
 </div>
     <script>
-// Увеличение фото
-document.querySelectorAll('img').forEach(img => {
-    img.style.cursor = 'zoom-in';
-    img.addEventListener('click', () => {
-        const modal = document.getElementById('imageModal');
-        const modalImg = document.getElementById('modalImage');
-        modal.style.display = 'block';
-        modalImg.src = img.src;
+function scrollToSection(id) {
+    const section = document.getElementById(id);
+    if (section) {
+        section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+}
+
+// Кнопка наверх
+document.addEventListener("DOMContentLoaded", function () {
+    const scrollBtn = document.getElementById('scrollTopBtn');
+    window.addEventListener('scroll', () => {
+        scrollBtn.classList.toggle('show', window.scrollY > 300);
+    });
+    scrollBtn.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    // Модальное фото
+    const modal = document.getElementById('imageModal');
+    const modalImg = document.getElementById('modalImage');
+
+    document.querySelectorAll('img').forEach(img => {
+        img.style.cursor = 'zoom-in';
+        img.addEventListener('click', () => {
+            modal.style.display = 'block';
+            modalImg.src = img.src;
+        });
+    });
+
+    // Закрытие по клику в любом месте (и по самому фото)
+    modal.addEventListener('click', () => {
+        modal.style.display = 'none';
     });
 });
-
-document.querySelector('.close').addEventListener('click', () => {
-    document.getElementById('imageModal').style.display = 'none';
-});
-
-document.getElementById('imageModal').addEventListener('click', (e) => {
-    if (e.target === e.currentTarget) {
-        e.currentTarget.style.display = 'none';
-    }
-});
-
 </script>
+
 </body>
 </html>
 
