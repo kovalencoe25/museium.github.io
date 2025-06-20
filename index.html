@@ -85,5 +85,12 @@
     <footer>
         <p>&copy; 2025 Школа №11, г. Камышин</p>
     </footer>
+<script src="https://unpkg.com/@vkontakte/vk-bridge/dist/browser.min.js"></script>
+<script>
+  // Инициализация среды VK
+  if (window.location !== window.parent.location) {
+    vkBridge.send('VKWebAppInit');
+  }
+</script>
 </body>
 </html>
