@@ -330,3 +330,8 @@ nav button {
     cursor: pointer;
     z-index: 201;
 }
+.history-image img {
+    width: 200px;
+    border-radius: 12px;
+    flex-shrink: 0;
+}
