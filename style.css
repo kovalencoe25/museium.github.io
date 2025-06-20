@@ -207,6 +207,39 @@ nav button:hover {
     cursor: pointer;
     z-index: 201;
 }
+.history-block {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.history-text {
+    flex: 2;
+    min-width: 280px;
+    max-width: 600px;
+}
+
+.history-image {
+    flex: 1;
+    min-width: 200px;
+    max-width: 300px;
+    text-align: center;
+}
+
+.history-image img {
+    width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.caption {
+    font-size: 0.9em;
+    color: #666;
+    margin-top: 8px;
+    font-style: italic;
+}
 
 /* 📱 Мобильная адаптация */
 @media (max-width: 768px) {
